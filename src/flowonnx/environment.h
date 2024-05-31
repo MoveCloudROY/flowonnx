@@ -7,8 +7,6 @@
 #include <flowonnx/flowonnxglobal.h>
 #include <flowonnx/flowonnx_common.h>
 
-#define ortEnv (flowonnx::Environment::instance())
-
 namespace flowonnx {
 
     class FLOWONNX_EXPORT Environment {
@@ -19,8 +17,7 @@ namespace flowonnx {
         static Environment *instance();
 
     public:
-        bool load(const std::filesystem::path &path, ExecutionProvider ep,
-                  std::string *errorMessage);
+        bool load(const std::filesystem::path &path, ExecutionProvider ep, std::string *errorMessage);
         bool isLoaded() const;
 
         std::filesystem::path runtimePath() const;

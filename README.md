@@ -10,5 +10,5 @@ OnnxRuntime Inference Flow Utility.
 ## Setup Environment
 
 ```cmake
-cd libs && cmake -P ../scripts/setup-onnxruntime.cmake
+cd libs && cmake [-Dep=gpu] -P ../scripts/setup-onnxruntime.cmake
 ```

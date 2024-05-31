@@ -36,8 +36,6 @@ namespace flowonnx {
         MT_Vocoder,
     };
 
-    constexpr const int kMaxStrLen = 2048;
-
 }
 
 #endif // FLOWONNX_COMMON_H

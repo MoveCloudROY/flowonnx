@@ -16,7 +16,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
     "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/..>"
 )
 
-target_include_directories(${PROJECT_NAME} PRIVATE .)
+target_include_directories(${PROJECT_NAME} PRIVATE . private)
 
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_17)
 
@@ -27,8 +27,8 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE ORT_API_MANUAL_INIT)
 
 if(WIN32)
     add_custom_command(TARGET ${PROJECT_NAME}
-        COMMAND xcopy /Q /Y *.dll \"$<TARGET_FILE_DIR:${PROJECT_NAME}>/../bin\"
-        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../../libs/onnxruntime/lib
+        COMMAND xcopy /Q /Y *.dll \"$<TARGET_FILE_DIR:${PROJECT_NAME}>/../bin\" > NUL
+        WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/../../libs/onnxruntime/lib"
     )
 endif()
 
