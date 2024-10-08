@@ -5,10 +5,10 @@
 
 namespace flowonnx {
 
-    class Inference::Impl {
-    public:
-    };
+class Inference::Impl {
+public:
+};
 
-}
+} // namespace flowonnx
 
 #endif // INFERENCE_P_H

@@ -1,0 +1,38 @@
+{
+    "connections": {
+        "a": {
+            "in1": {
+                "from": "-",
+                "port": "in1"
+            }
+        },
+        "b": {
+            "bind1": {
+                "from": "a",
+                "port": "bind1"
+            }
+        },
+        "c": {
+            "bind2": {
+                "from": "b",
+                "port": "bind2"
+            },
+            "in2": {
+                "from": "-",
+                "port": "in2"
+            }
+        }
+    },
+    "outputs": {
+        "a": [
+            "out11",
+            "out11"
+        ],
+        "b": [
+            "out2"
+        ],
+        "c": [
+            "out3"
+        ]
+    }
+}

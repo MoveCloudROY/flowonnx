@@ -5,21 +5,20 @@
 
 namespace flowonnx {
 
-    class FLOWONNX_EXPORT Inference {
-    public:
-        Inference();
-        ~Inference();
+class FLOWONNX_EXPORT Inference {
+public:
+    Inference();
+    ~Inference();
 
-        Inference(Inference &&other) noexcept;
-        Inference &operator=(Inference &&other) noexcept;
+    Inference(Inference &&other) noexcept;
+    Inference &operator=(Inference &&other) noexcept;
 
-    public:
+public:
+protected:
+    class Impl;
+    std::unique_ptr<Impl> _impl;
+};
 
-    protected:
-        class Impl;
-        std::unique_ptr<Impl> _impl;
-    };
-
-}
+} // namespace flowonnx
 
 #endif // INFERENCE_H

@@ -5,8 +5,8 @@ project(flowonnx VERSION 0.0.1.1 LANGUAGES CXX)
 # ----------------------------------
 # Build Options
 # ----------------------------------
-option(FLOWONNX_BUILD_STATIC "Build static library" on)
-option(FLOWONNX_INSTALL "Install library" on)
+option(FLOWONNX_BUILD_STATIC "Build static library" ON)
+option(FLOWONNX_INSTALL "Install library" ON)
 option(FLOWONNX_BUILD_TESTS "Build test cases" ON)
 
 # ----------------------------------

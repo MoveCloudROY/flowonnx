@@ -9,7 +9,7 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE FLOWONNX_LIBRARY)
 
 add_library(${PROJECT_NAME}::${PROJECT_NAME} ALIAS ${PROJECT_NAME})
 
-file(GLOB_RECURSE _src *.h *.cpp)
+file(GLOB_RECURSE _src CONFIGURE_DEPENDS *.h *.cpp)
 target_sources(${PROJECT_NAME} PRIVATE ${_src})
 
 target_include_directories(${PROJECT_NAME} PUBLIC
@@ -34,7 +34,9 @@ endif()
 
 # Libraries
 find_package(loadso CONFIG REQUIRED)
-target_link_libraries(${PROJECT_NAME} PRIVATE loadso::loadso)
+find_package(TBB  REQUIRED)
+find_package(spdlog REQUIRED)
+target_link_libraries(${PROJECT_NAME} PRIVATE loadso::loadso TBB::tbb spdlog::spdlog)
 
 # Add platform specific
 if(WIN32)
@@ -56,7 +58,7 @@ if(FLOWONNX_INSTALL)
     )
 
     # Install headers
-    file(GLOB _headers *.h)
+    file(GLOB _headers CONFIGURE_DEPENDS *.h)
     install(FILES ${_headers} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/${FLOWONNX_INSTALL_NAME})
 endif()
 
