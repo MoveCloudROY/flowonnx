@@ -36,8 +36,7 @@ endif()
 find_package(loadso CONFIG REQUIRED)
 find_package(TBB  REQUIRED)
 find_package(spdlog REQUIRED)
-find_package(nlohmann_json REQUIRED)
-target_link_libraries(${PROJECT_NAME} PRIVATE loadso::loadso TBB::tbb spdlog::spdlog nlohmann_json)
+target_link_libraries(${PROJECT_NAME} PRIVATE loadso::loadso TBB::tbb spdlog::spdlog)
 
 # Add platform specific
 if(WIN32)

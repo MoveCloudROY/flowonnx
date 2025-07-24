@@ -1,0 +1,4 @@
+#ifndef FLOWONNX_DATA_BUFFER_HPP
+#define FLOWONNX_DATA_BUFFER_HPP
+
+#endif

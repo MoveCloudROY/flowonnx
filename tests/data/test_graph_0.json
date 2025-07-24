@@ -1,20 +1,26 @@
 {
     "connections": {
-        "a": {
+        // 模块名
+        "Module-A": {
+            // Module-A 的输入端口
             "in1": {
+                // ‘-’ 表示外部输入，from 为 "-" 时，表示该端口的输入来自于全局输入
+                // 其他情况下，from 表示这个端口的输入来自于哪个模块
                 "from": "-",
-                "port": "in1"
+                // port 是指 $from 中的的输出端口
+                "port": "global_in1"
             }
         },
-        "b": {
+        "Module-B": {
             "bind1": {
-                "from": "a",
+                "from": "Module-A",
                 "port": "bind1"
             }
         },
-        "c": {
+        "Module-C": {
+            // 一个模块可以有多个输入端口
             "bind2": {
-                "from": "b",
+                "from": "Module-B",
                 "port": "bind2"
             },
             "in2": {
@@ -23,16 +29,15 @@
             }
         }
     },
-    "outputs": {
-        "a": [
-            "out11",
-            "out11"
+    // 整张图的输出端口
+    "global_outputs": {
+        // 模块名
+        "Module-B": [
+            // 模块的输出端口
+            "ModuleB_output"
         ],
-        "b": [
-            "out2"
-        ],
-        "c": [
-            "out3"
+        "Module-C": [
+            "ModuleC_output"
         ]
     }
 }

@@ -1,0 +1,4 @@
+#ifndef DS_FLOWONNX_MACRO_H
+#define DS_FLOWONNX_MACRO_H
+
+#endif
